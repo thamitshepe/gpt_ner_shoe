@@ -302,29 +302,23 @@ def extract_and_store_data(text):
     # Select the worksheet in your Google Sheets document
     worksheet = spreadsheet.get_worksheet(0)  # Replace with the index of your worksheet (0 for the first sheet)
 
-def map_data_to_columns(product, column_order):
-    # Create a list to store the data for the current product in the order defined by column_order
-    data_list = []
-    for col in column_order:
-        if col == 'Shoe':
-            data_list.append(product.get('Name', ''))
-        elif col == 'List Price':
-            data_list.append(product.get('List Price', '').replace('$', ''))
-        elif col == 'Cost':
-            data_list.append(product.get('Cost', '').replace('$', ''))
-        else:
-            data_list.append(product.get(col, ''))
-    return data_list
+    # Get the column names from the first row of the worksheet
+    header_row = worksheet.row_values(1)
 
-def update_google_sheets(products, worksheet):
-    # Assuming column_order is defined based on the first row of the sheet
-    # and it contains the column names in the desired order
-    first_row = worksheet.get_values(start='A1', end='A1')
-    column_order = first_row[0]
-
-    # Iterate through the products and append data to the sheet
     for product in products:
-        data_list = map_data_to_columns(product, column_order)
+        # Preprocess the data (remove '$' from "List Price" and "Cost")
+        list_price = product.get('List Price', '').replace('$', '')
+        cost = product.get('Cost', '').replace('$', '')
+
+        # Create a dictionary to store the data for the current product with the correct column mapping
+        data_dict = {'Shoe': product.get('Shoe', ''),
+                    'List Price': list_price,
+                    'Cost': cost,
+                    'Name': product.get('Name', '')}
+
+        # Append a row for the current product
+        # Ensure the values are in the order of the column names
+        data_list = [data_dict[col] for col in header_row]
         worksheet.append_rows([data_list])
 
     return f"{len(products)} rows added to Google Sheets for the products."
