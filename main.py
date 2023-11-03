@@ -321,14 +321,9 @@ def extract_and_store_data(text):
             'Quantity': product.get('Quantity', '')
         }
 
-        # Ensure all keys from data_dict are in header_row
-        for key in data_dict.keys():
-            if key not in header_row:
-                header_row.append(key)
-
         # Append a row for the current product
         # Ensure the values are in the order of the column names
-        data_list = [data_dict[col] for col in header_row]
+        data_list = [data_dict.get(col, '') for col in header_row]
         worksheet.append_rows([data_list])
 
     return f"{len(products)} rows added to Google Sheets for the products."
