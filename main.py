@@ -22,16 +22,17 @@ from markdownify import markdownify as md
 # For token counting
 from langchain.callbacks import get_openai_callback
 
+from fastapi import FastAPI, HTTPException, Form
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.cache import UpstashRedisCache
 from upstash_redis import Redis
 import functools
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from langcorn import create_service
 
-def printOutput(output):
-    print(json.dumps(output, sort_keys=True, indent=3))
+
+# Configure the FastAPI application
+app = FastAPI()
 
 load_dotenv()  # Load the environment variables from the .env file
 
@@ -278,25 +279,23 @@ DQ4914-103 damaged
 )
 
 
-text = ""
+def printOutput(output):
+    return json.dumps(output, sort_keys=True, indent=3)
 
-chain = create_extraction_chain(llm, product_schema)
-output = chain.run(text=text)['data']
+def extract_and_store_data(text):
+    # Create an extraction chain using the LangChain LLM and the product schema
+    chain = create_extraction_chain(llm, product_schema)
+    
+    # Run the extraction chain on the input text
+    output = chain.run(text=text)['data']
+    
+    # Extract the list of products from the "product" key
+    products = output.get("product", [])
 
-if __name__ == "__app__":
-  printOutput(output)
+    if not products:
+        return "No products found in the extracted data."
 
-# Extract the list of products from the "product" key
-products = output.get("product", [])
-
-if not products:
-    print("No products found in the extracted data.")
-else:
-    # Define the order of columns in the Google Sheets document
-    # The "Name" column will go to the "Shoe" column, and the rest are the same as the keys
-    column_order = ['Shoe'] + [col for col in products[0] if col != 'Name']
-
-    # Connect to your Google Sheets document
+    # Connect to your Google Sheets document using service account credentials
     gc = gspread.service_account(filename='secretkey.json')  # Replace with your JSON credentials file
     spreadsheet = gc.open('Inventory')  # Replace with your document name
 
@@ -307,8 +306,9 @@ else:
         # Preprocess the data (remove '$' from "List Price" and "Cost")
         list_price = product.get('List Price', '').replace('$', '')
         cost = product.get('Cost', '').replace('$', '')
-    
+
         # Create a list to store the data for the current product in the order defined by column_order
+        column_order = ['Shoe'] + [col for col in products[0] if col != 'Name']
         data_list = [product.get(col, '').replace('$', '') if col not in ['Shoe', 'List Price', 'Cost']
                      else list_price if col == 'List Price'
                      else cost if col == 'Cost'
@@ -317,4 +317,12 @@ else:
         # Append a row for the current product
         worksheet.append_rows([data_list])
 
-    print(f"{len(products)} rows added to Google Sheets for the products.")
+    return f"{len(products)} rows added to Google Sheets for the products."
+
+@app.post("/process-text/")
+async def process_text(text: str = Form(...)):
+    try:
+        result = extract_and_store_data(text)
+        return {"message": result}
+    except Exception as e:
+        return HTTPException(status_code=500, detail=str(e))
