@@ -1,2 +1,5 @@
-.vercel
 aishoe
+.vercel
+Vercel.json
+.vercelignore
+api
