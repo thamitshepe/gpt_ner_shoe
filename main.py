@@ -302,24 +302,34 @@ def extract_and_store_data(text):
     # Select the worksheet in your Google Sheets document
     worksheet = spreadsheet.get_worksheet(0)  # Replace with the index of your worksheet (0 for the first sheet)
 
+def map_data_to_columns(product, column_order):
+    # Create a list to store the data for the current product in the order defined by column_order
+    data_list = []
+    for col in column_order:
+        if col == 'Shoe':
+            data_list.append(product.get('Name', ''))
+        elif col == 'List Price':
+            data_list.append(product.get('List Price', '').replace('$', ''))
+        elif col == 'Cost':
+            data_list.append(product.get('Cost', '').replace('$', ''))
+        else:
+            data_list.append(product.get(col, ''))
+    return data_list
+
+def update_google_sheets(products, worksheet):
+    # Assuming column_order is defined based on the first row of the sheet
+    # and it contains the column names in the desired order
+    first_row = worksheet.get_values(start='A1', end='A1')
+    column_order = first_row[0]
+
+    # Iterate through the products and append data to the sheet
     for product in products:
-        # Preprocess the data (remove '$' from "List Price" and "Cost")
-        list_price = product.get('List Price', '').replace('$', '')
-        cost = product.get('Cost', '').replace('$', '')
-
-        # Create a list to store the data for the current product in the order defined by column_order
-        column_order = ['Shoe'] + [col for col in products[0] if col != 'Name']
-        data_list = [product.get(col, '').replace('$', '') if col not in ['Shoe', 'List Price', 'Cost']
-                     else list_price if col == 'List Price'
-                     else cost if col == 'Cost'
-                     else product.get('Name', '') for col in column_order]
-
-        # Append a row for the current product
+        data_list = map_data_to_columns(product, column_order)
         worksheet.append_rows([data_list])
 
     return f"{len(products)} rows added to Google Sheets for the products."
 
-@app.post("/process-text/")
+@app.post("/aishoe/")
 async def process_text(text: str = Form(...)):
     try:
         result = extract_and_store_data(text)
