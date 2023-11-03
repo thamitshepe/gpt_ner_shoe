@@ -278,7 +278,7 @@ DQ4914-103 damaged
 )
 
 
-text = """"""
+text = ""
 
 chain = create_extraction_chain(llm, product_schema)
 output = chain.run(text=text)['data']
