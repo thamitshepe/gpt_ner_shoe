@@ -46,8 +46,8 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=0.7,
-    max_tokens=2000,
+    temperature=1.1,
+    max_tokens=2500,
     openai_api_key=openai_api_key
 )
 
@@ -325,8 +325,15 @@ def extract_and_store_data(text):
         # Ensure the values are in the order of the column names
         data_list = [data_dict.get(col, '') for col in header_row]
         worksheet.append_rows([data_list])
+    
+        # Return the message about the number of rows added to Google Sheets
+        result_message = f"{len(products)} rows added to Google Sheets for the products."
 
-    return f"{len(products)} rows added to Google Sheets for the products."
+        # Print the output
+        printOutput(output)
+
+    # Return the result message
+    return result_message
 
 @app.post("/aishoe/")
 async def process_text(text: str = Form(...)):
