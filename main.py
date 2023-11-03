@@ -311,15 +311,20 @@ def extract_and_store_data(text):
         cost = product.get('Cost', '').replace('$', '')
 
         # Create a dictionary to store the data for the current product with the correct column mapping
-        data_dict = {'Shoe': product.get('Name', ''),
-                    'List Price': list_price,
-                    'Cost': cost,
-                    'Sku': product.get('Sku', ''),
-                    'Condition': product.get('Condition', ''),
-                    'Size': product.get('Size', ''),
-                    'Quantity': product.get('Quantity', '')
-                    }
-        
+        data_dict = {
+            'Shoe': product.get('Name', ''),
+            'List Price': list_price,
+            'Cost': cost,
+            'Sku': product.get('Sku', ''),
+            'Condition': product.get('Condition', ''),
+            'Size': product.get('Size', ''),
+            'Quantity': product.get('Quantity', '')
+        }
+
+        # Ensure all keys from data_dict are in header_row
+        for key in data_dict.keys():
+            if key not in header_row:
+                header_row.append(key)
 
         # Append a row for the current product
         # Ensure the values are in the order of the column names
