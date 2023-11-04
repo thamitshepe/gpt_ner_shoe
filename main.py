@@ -46,8 +46,8 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=1.1,
-    max_tokens=2111,
+    temperature=0.8,
+    max_tokens=2002,
     openai_api_key=openai_api_key
 )
 
@@ -103,7 +103,8 @@ product_schema = Object(
                     "SIZE": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -111,7 +112,8 @@ product_schema = Object(
                     "SIZE": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -119,7 +121,8 @@ product_schema = Object(
                     "SIZE": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$100",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -127,7 +130,8 @@ product_schema = Object(
                     "SIZE": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -135,7 +139,8 @@ product_schema = Object(
                     "SIZE": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -143,7 +148,8 @@ product_schema = Object(
                     "SIZE": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$120",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -151,7 +157,8 @@ product_schema = Object(
                     "SIZE": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$110",
-                    "COST": "$200"
+                    "COST": "$200",
+                    "CONDITION": ""
                 }
             ],
         ),
@@ -237,7 +244,7 @@ DQ4914-103 damaged
 5.5""",
             [
                 {
-                    "SHOE": "DV9956-103",
+                    "NAME": "DV9956-103",
                     "SKU": "DV9956-103",
                     "SIZE": "9",
                     "QUANTITY": "1",
@@ -246,7 +253,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage"
                 },
                 {
-                    "SHOE": "AV2187-117",
+                    "NAME": "AV2187-117",
                     "SKU": "AV2187-117",
                     "SIZE": "10.5",
                     "QUANTITY": "3",
@@ -255,7 +262,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage box"
                 },
                 {
-                    "SHOE": "CD9065-116",
+                    "NAME": "CD9065-116",
                     "SKU": "CD9065-116",
                     "SIZE": "6y",
                     "QUANTITY": "1",
@@ -264,7 +271,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage box"
                 },
                 {
-                    "SHOE": "DQ4914-103",
+                    "NAME": "DQ4914-103",
                     "SKU": "DQ4914-103",
                     "SIZE": "5.5",
                     "QUANTITY": "1",
@@ -326,11 +333,8 @@ def extract_and_store_data(text):
         data_list = [data_dict.get(col, '') for col in header_row]
         worksheet.append_rows([data_list])
     
-        # Return the message about the number of rows added to Google Sheets
-        result_message = f"{len(products)} rows added to Google Sheets for the products."
-
-        # Print the output
-        printOutput(output)
+    # Return the message about the number of rows added to Google Sheets
+    result_message = f"{len(products)} rows added to Google Sheets for the products."
 
     # Return the result message
     return result_message
@@ -342,7 +346,3 @@ async def process_text(text: str = Form(...)):
         return {"message": result}
     except Exception as e:
         return HTTPException(status_code=500, detail=str(e))
-    
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=10007)
