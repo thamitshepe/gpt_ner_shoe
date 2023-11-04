@@ -46,8 +46,8 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=0.6,
-    max_tokens=2008,
+    temperature=0.8,
+    max_tokens=2500,
     openai_api_key=openai_api_key
 )
 
@@ -295,6 +295,8 @@ def extract_and_store_data(text):
     
     # Run the extraction chain on the input text
     output = chain.run(text=text)['data']
+
+    output = printOutput(output)
     
     # Extract the list of products from the "product" key
     products = output.get("product", [])
