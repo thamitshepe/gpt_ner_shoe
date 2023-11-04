@@ -46,7 +46,7 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=1.2,
+    temperature=0.6,
     max_tokens=2008,
     openai_api_key=openai_api_key
 )
