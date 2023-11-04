@@ -295,8 +295,6 @@ def extract_and_store_data(text):
     
     # Run the extraction chain on the input text
     output = chain.run(text=text)['data']
-
-    output = printOutput(output)
     
     # Extract the list of products from the "product" key
     products = output.get("product", [])
