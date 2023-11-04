@@ -313,21 +313,25 @@ def extract_and_store_data(text):
     header_row = worksheet.row_values(1)
 
     for product in products:
+        # Create an empty dictionary to store the data for the current product
+        data_dict = {}
+    
+        # Define the keys you want in data_dict
+        keys_to_extract = ['Name', 'List Price', 'Cost', 'Sku', 'Condition', 'Size', 'Quantity']
+    
+        # Iterate through the keys and add them to data_dict if they exist in the product
+        for key in keys_to_extract:
+            if key in product:
+                data_dict[key] = product[key]
+    
         # Preprocess the data (remove '$' from "List Price" and "Cost")
-        list_price = product.get('List Price', '').replace('$', '')
-        cost = product.get('Cost', '').replace('$', '')
-
-        # Create a dictionary to store the data for the current product with the correct column mapping
-        data_dict = {
-            'Shoe': product.get('Name', ''),
-            'List Price': list_price,
-            'Cost': cost,
-            'Sku': product.get('Sku', ''),
-            'Condition': product.get('Condition', ''),
-            'Size': product.get('Size', ''),
-            'Quantity': product.get('Quantity', '')
-        }
-
+        list_price = data_dict.get('List Price', '').replace('$', '')
+        cost = data_dict.get('Cost', '').replace('$', '')
+    
+        # Add the preprocessed data to data_dict
+        data_dict['List Price'] = list_price
+        data_dict['Cost'] = cost
+    
         # Append a row for the current product
         # Ensure the values are in the order of the column names
         data_list = [data_dict.get(col, '') for col in header_row]
