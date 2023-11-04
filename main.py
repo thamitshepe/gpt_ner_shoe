@@ -340,7 +340,7 @@ def extract_and_store_data(text):
     return result_message
 
 @app.post("/aishoe/")
-async def process_text(text: str = Query(...)):
+async def process_text(text: str):
     try:
         result = extract_and_store_data(text)
         return {"message": result}
