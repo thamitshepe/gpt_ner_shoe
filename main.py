@@ -47,7 +47,7 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=1.1,
-    max_tokens=2500,
+    max_tokens=2000,
     openai_api_key=openai_api_key
 )
 
@@ -237,7 +237,7 @@ DQ4914-103 damaged
 5.5""",
             [
                 {
-                    "SHOE": "",
+                    "SHOE": "DV9956-103",
                     "SKU": "DV9956-103",
                     "SIZE": "9",
                     "QUANTITY": "1",
@@ -246,7 +246,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage"
                 },
                 {
-                    "SHOE": "",
+                    "SHOE": "AV2187-117",
                     "SKU": "AV2187-117",
                     "SIZE": "10.5",
                     "QUANTITY": "3",
@@ -255,7 +255,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage box"
                 },
                 {
-                    "SHOE": "",
+                    "SHOE": "CD9065-116",
                     "SKU": "CD9065-116",
                     "SIZE": "6y",
                     "QUANTITY": "1",
@@ -264,7 +264,7 @@ DQ4914-103 damaged
                     "CONDITION": "damage box"
                 },
                 {
-                    "SHOE": "",
+                    "SHOE": "DQ4914-103",
                     "SKU": "DQ4914-103",
                     "SIZE": "5.5",
                     "QUANTITY": "1",
