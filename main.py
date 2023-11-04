@@ -84,6 +84,10 @@ product_schema = Object(
         Text(
             id="Condition",
             description="Condition of individual size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words"
+        ),
+        Text(
+            id="Complete",
+            description="This is just to show that a product was addded/a deal was complete, the value is always Complete"
         )
     ],
     examples=[
@@ -104,7 +108,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -113,7 +118,9 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
+                    
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -122,7 +129,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "$100",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -131,7 +139,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -140,7 +149,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -149,7 +159,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "$120",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "Women collection all brand new",
@@ -158,7 +169,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "LIST PRICE": "$110",
                     "COST": "$200",
-                    "CONDITION": ""
+                    "CONDITION": "",
+                    "COMPLETE": "Complete"
                 }
             ],
         ),
@@ -179,7 +191,8 @@ product_schema = Object(
                     "QUANTITY": "1",
                     "COST": "$110",
                     "LIST PRICE": "None",
-                    "CONDITION": "Damaged box"
+                    "CONDITION": "Damaged box",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -187,7 +200,8 @@ product_schema = Object(
                     "SIZE": "8.5",
                     "QUANTITY": "1",
                     "COST": "$110",
-                    "LIST PRICE": "None"
+                    "LIST PRICE": "None",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -196,7 +210,8 @@ product_schema = Object(
                     "QUANTITY": "2",
                     "COST": "$110",
                     "LIST PRICE": "None",
-                    "CONDITION": "2 Damaged boxes"
+                    "CONDITION": "2 Damaged boxes",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -204,7 +219,8 @@ product_schema = Object(
                     "SIZE": "9.5",
                     "QUANTITY": "2",
                     "COST": "$110",
-                    "LIST PRICE": "None"
+                    "LIST PRICE": "None",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -212,7 +228,8 @@ product_schema = Object(
                     "SIZE": "11",
                     "QUANTITY": "2",
                     "COST": "$110",
-                    "LIST PRICE": "None"
+                    "LIST PRICE": "None",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -220,7 +237,8 @@ product_schema = Object(
                     "SIZE": "11.5",
                     "QUANTITY": "2",
                     "COST": "$110",
-                    "LIST PRICE": "None"
+                    "LIST PRICE": "None",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": " Vapormax Black",
@@ -228,7 +246,8 @@ product_schema = Object(
                     "SIZE": "12",
                     "QUANTITY": "1",
                     "COST": "$110",
-                    "LIST PRICE": "None"
+                    "LIST PRICE": "None",
+                    "COMPLETE": "Complete"
                 }
 
             ]
@@ -250,7 +269,8 @@ DQ4914-103 damaged
                     "QUANTITY": "1",
                     "COST": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage"
+                    "CONDITION": "damage",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "AV2187-117",
@@ -259,7 +279,8 @@ DQ4914-103 damaged
                     "QUANTITY": "3",
                     "COST": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage box"
+                    "CONDITION": "damage box",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "CD9065-116",
@@ -268,7 +289,8 @@ DQ4914-103 damaged
                     "QUANTITY": "1",
                     "COST": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage box"
+                    "CONDITION": "damage box",
+                    "COMPLETE": "Complete"
                 },
                 {
                     "NAME": "DQ4914-103",
@@ -277,7 +299,8 @@ DQ4914-103 damaged
                     "QUANTITY": "1",
                     "COST": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damaged"
+                    "CONDITION": "damaged",
+                    "COMPLETE": "Complete"
                 }
             ]
         )
@@ -323,7 +346,7 @@ def extract_and_store_data(text):
         data_dict = {}
     
         # Define the keys you want in data_dict
-        keys_to_extract = ['Name', 'List Price', 'Cost', 'Sku', 'Condition', 'Size', 'Quantity']
+        keys_to_extract = ['Name', 'List Price', 'Cost', 'Sku', 'Condition', 'Size', 'Quantity', 'Complete']
     
         # Iterate through the keys and add them to data_dict if they exist in the product
         for key in keys_to_extract:
