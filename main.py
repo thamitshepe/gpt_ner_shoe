@@ -302,8 +302,14 @@ def extract_and_store_data(text):
     if not products:
         return "No products found in the extracted data."
 
+    scopes = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'
+    ]
+
+
     # Connect to your Google Sheets document using service account credentials
-    gc = gspread.service_account(filename='secretkey.json')  # Replace with your JSON credentials file
+    gc = gspread.service_account(filename='secretkey.json', scopes=scopes)  # Replace with your JSON credentials file
     spreadsheet = gc.open('Inventory')  # Replace with your document name
 
     # Select the worksheet in your Google Sheets document
