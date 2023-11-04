@@ -47,7 +47,7 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=1.1,
-    max_tokens=2000,
+    max_tokens=2111,
     openai_api_key=openai_api_key
 )
 
@@ -59,7 +59,7 @@ product_schema = Object(
     attributes=[
         Text(
             id="Name",
-            description="The name of the product. If none then share the same value as Sku"
+            description="The name of the product. If none then share the same text as Sku"
         ),
         Text(
             id="Sku",
