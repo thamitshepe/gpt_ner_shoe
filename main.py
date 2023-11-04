@@ -63,7 +63,7 @@ product_schema = Object(
         ),
         Text(
             id="Sku",
-            description="Code used to identify the product"
+            description="Code used to identify the product, if none the generate a random one with a random 3 digit number and always starting with GEN, for instance GEN034, number always random"
         ),
         Text(
             id="Size",
