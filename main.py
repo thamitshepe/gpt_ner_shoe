@@ -59,7 +59,7 @@ product_schema = Object(
     attributes=[
         Text(
             id="Name",
-            description="The name of the product. If none then share the same text as Sku"
+            description="The name of the product. If none then share the same text as Sku, if foound do not include the Sku in the name"
         ),
         Text(
             id="Sku",
