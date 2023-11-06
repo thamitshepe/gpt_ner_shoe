@@ -75,15 +75,15 @@ product_schema = Object(
         ),
         Text(
             id="Cost",
-            description="Cost of the product"
+            description="Cost of the product, if none leave empty"
         ),
         Text(
             id="List Price",
-            description="Price of an individual size"
+            description="Price of an individual size, if none leave empty"
         ),
         Text(
             id="Condition",
-            description="Condition of individual size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words"
+            description="Condition of individual size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words, if none leave empty"
         ),
         Text(
             id="Complete",
