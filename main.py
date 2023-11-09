@@ -47,7 +47,7 @@ langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=1,
-    max_tokens=2000,
+    max_tokens=2500,
     openai_api_key=openai_api_key
 )
 
@@ -79,7 +79,7 @@ product_schema = Object(
         ),
         Text(
             id="Cost",
-            description="Price of an individual capacity, if none leave empty"
+            description="Price of an individual capacity/size, if none leave empty"
         ),
         Text(
             id="Grade",
@@ -354,12 +354,12 @@ def extract_and_store_data(text):
                 data_dict[key] = product[key]
     
         # Preprocess the data (remove '$' from "List Price" and "Cost")
-        list_price = data_dict.get('Cost', '').replace('$', '')
-        cost = data_dict.get('Price Paid', '').replace('$', '')
+        cost = data_dict.get('Cost', '').replace('$', '')
+        price_paid = data_dict.get('Price Paid', '').replace('$', '')
     
         # Add the preprocessed data to data_dict
-        data_dict['Cost'] = list_price
-        data_dict['Price Paid'] = cost
+        data_dict['Cost'] = cost
+        data_dict['Price Paid'] = price_paid
     
         # Append a row for the current product
         # Ensure the values are in the order of the column names
