@@ -78,7 +78,7 @@ product_schema = Object(
             description="Price paid for the product, if none leave empty"
         ),
         Text(
-            id="List Price",
+            id="Cost",
             description="Price of an individual capacity, if none leave empty"
         ),
         Text(
@@ -106,7 +106,7 @@ product_schema = Object(
                     "SKU": "Bq6472-107",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "$60",
+                    "COST": "$60",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -116,7 +116,7 @@ product_schema = Object(
                     "SKU": "DH0210-100",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -127,7 +127,7 @@ product_schema = Object(
                     "SKU": "Bq6472-202",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "$100",
+                    "COST": "$100",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -137,7 +137,7 @@ product_schema = Object(
                     "SKU": "Dh5894-600",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -147,7 +147,7 @@ product_schema = Object(
                     "SKU": "Dm9126-104",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "$60",
+                    "COST": "$60",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -157,7 +157,7 @@ product_schema = Object(
                     "SKU": "Cv5276-001",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "$120",
+                    "COST": "$120",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -167,7 +167,7 @@ product_schema = Object(
                     "SKU": "BQ6472-102",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
-                    "LIST PRICE": "$110",
+                    "COST": "$110",
                     "PRICE PAID": "$200",
                     "GRADE": "",
                     "COMPLETE": "Complete"
@@ -190,7 +190,7 @@ product_schema = Object(
                     "CAPACITY": "8",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "GRADE": "Damaged box",
                     "COMPLETE": "Complete"
                 },
@@ -200,7 +200,7 @@ product_schema = Object(
                     "CAPACITY": "8.5",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "COMPLETE": "Complete"
                 },
                 {
@@ -209,7 +209,7 @@ product_schema = Object(
                     "CAPACITY": "9",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "GRADE": "2 Damaged boxes",
                     "COMPLETE": "Complete"
                 },
@@ -219,7 +219,7 @@ product_schema = Object(
                     "CAPACITY": "9.5",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "COMPLETE": "Complete"
                 },
                 {
@@ -228,7 +228,7 @@ product_schema = Object(
                     "CAPACITY": "11",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "COMPLETE": "Complete"
                 },
                 {
@@ -237,7 +237,7 @@ product_schema = Object(
                     "CAPACITY": "11.5",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "COMPLETE": "Complete"
                 },
                 {
@@ -246,7 +246,7 @@ product_schema = Object(
                     "CAPACITY": "12",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "LIST PRICE": "None",
+                    "COST": "None",
                     "COMPLETE": "Complete"
                 }
 
@@ -268,7 +268,7 @@ DQ4914-103 damaged
                     "CAPACITY": "9",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
-                    "LIST PRICE": "",
+                    "COST": "",
                     "GRADE": "damage",
                     "COMPLETE": "Complete"
                 },
@@ -278,7 +278,7 @@ DQ4914-103 damaged
                     "CAPACITY": "10.5",
                     "QUANTITY": "3",
                     "PRICE PAID": "",
-                    "LIST PRICE": "",
+                    "COST": "",
                     "GRADE": "damage box",
                     "COMPLETE": "Complete"
                 },
@@ -288,7 +288,7 @@ DQ4914-103 damaged
                     "CAPACITY": "6y",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
-                    "LIST PRICE": "",
+                    "COST": "",
                     "GRADE": "damage box",
                     "COMPLETE": "Complete"
                 },
@@ -298,7 +298,7 @@ DQ4914-103 damaged
                     "CAPACITY": "5.5",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
-                    "LIST PRICE": "",
+                    "COST": "",
                     "GRADE": "damaged",
                     "COMPLETE": "Complete"
                 }
@@ -346,7 +346,7 @@ def extract_and_store_data(text):
         data_dict = {}
     
         # Define the keys you want in data_dict
-        keys_to_extract = ['Model', 'List Price', 'Price Paid', 'Sku', 'Grade', 'Capacity', 'Quantity', 'Complete']
+        keys_to_extract = ['Model', 'Cost', 'Price Paid', 'Sku', 'Grade', 'Capacity', 'Quantity', 'Complete']
     
         # Iterate through the keys and add them to data_dict if they exist in the product
         for key in keys_to_extract:
@@ -354,11 +354,11 @@ def extract_and_store_data(text):
                 data_dict[key] = product[key]
     
         # Preprocess the data (remove '$' from "List Price" and "Cost")
-        list_price = data_dict.get('List Price', '').replace('$', '')
+        list_price = data_dict.get('Cost', '').replace('$', '')
         cost = data_dict.get('Price Paid', '').replace('$', '')
     
         # Add the preprocessed data to data_dict
-        data_dict['List Price'] = list_price
+        data_dict['Cost'] = list_price
         data_dict['Price Paid'] = cost
     
         # Append a row for the current product
