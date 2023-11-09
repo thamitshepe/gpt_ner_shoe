@@ -58,32 +58,32 @@ product_schema = Object(
     # Notice I put multiple fields to pull out different attributes
     attributes=[
         Text(
-            id="Name",
-            description="The name of the product. If none then put Sku in Name and Sku."
+            id="Model",
+            description="The name or model of the product. If none then put Sku in Model and Sku."
         ),
         Text(
             id="Sku",
             description="Code used to identify the product, if none the generate a random one with a random 3 digit number and always starting with GEN, for instance GEN034, number always random"
         ),
         Text(
-            id="Size",
-            description="Size or sizes of product, usually integer, float, or number followed by letter eg 8.5W, but can be size in words"
+            id="Capacity",
+            description="Capacity/Size or sizes of product, usually integer, float, or number followed by letter eg 8.5W, but can be size in words"
         ),
         Number(
             id="Quantity",
-            description="Quantity of each size of the product, always default to 1 when none"
+            description="Quantity of each capacity/size of the product, always default to 1 when none"
         ),
         Text(
-            id="Cost",
-            description="Cost of the product, if none leave empty"
+            id="Price Paid",
+            description="Price paid for the product, if none leave empty"
         ),
         Text(
             id="List Price",
-            description="Price of an individual size, if none leave empty"
+            description="Price of an individual capacity, if none leave empty"
         ),
         Text(
-            id="Condition",
-            description="Condition of individual size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words, if none leave empty"
+            id="Grade",
+            description="Grade or condition of individual capacity/size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words, if none leave empty"
         ),
         Text(
             id="Complete",
@@ -102,74 +102,74 @@ product_schema = Object(
     BQ6472-102 size 11w/9.5 men $110""",
             [
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "Bq6472-107",
-                    "SIZE": "10.5w/9 men",
+                    "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "DH0210-100",
-                    "SIZE": "10.5w/9 men",
+                    "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                     
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "Bq6472-202",
-                    "SIZE": "10.5w/9 men",
+                    "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$100",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "Dh5894-600",
-                    "SIZE": "10.5w/9 men",
+                    "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "None",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "Dm9126-104",
-                    "SIZE": "11w/9.5 men",
+                    "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$60",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "Cv5276-001",
-                    "SIZE": "11w/9.5 men",
+                    "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$120",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "Women collection all brand new",
+                    "MODEL": "Women collection all brand new",
                     "SKU": "BQ6472-102",
-                    "SIZE": "11w/9.5 men",
+                    "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "LIST PRICE": "$110",
-                    "COST": "$200",
-                    "CONDITION": "",
+                    "PRICE PAID": "$200",
+                    "GRADE": "",
                     "COMPLETE": "Complete"
                 }
             ],
@@ -185,67 +185,67 @@ product_schema = Object(
 12""",
             [
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "8",
+                    "CAPACITY": "8",
                     "QUANTITY": "1",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
-                    "CONDITION": "Damaged box",
+                    "GRADE": "Damaged box",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "8.5",
+                    "CAPACITY": "8.5",
                     "QUANTITY": "1",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "9",
+                    "CAPACITY": "9",
                     "QUANTITY": "2",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
-                    "CONDITION": "2 Damaged boxes",
+                    "GRADE": "2 Damaged boxes",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "9.5",
+                    "CAPACITY": "9.5",
                     "QUANTITY": "2",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "11",
+                    "CAPACITY": "11",
                     "QUANTITY": "2",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "11.5",
+                    "CAPACITY": "11.5",
                     "QUANTITY": "2",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": " Vapormax Black",
+                    "MODEL": " Vapormax Black",
                     "SKU": "924453-004",
-                    "SIZE": "12",
+                    "CAPACITY": "12",
                     "QUANTITY": "1",
-                    "COST": "$110",
+                    "PRICE PAID": "$110",
                     "LIST PRICE": "None",
                     "COMPLETE": "Complete"
                 }
@@ -263,43 +263,43 @@ DQ4914-103 damaged
 5.5""",
             [
                 {
-                    "NAME": "DV9956-103",
+                    "MODEL": "DV9956-103",
                     "SKU": "DV9956-103",
-                    "SIZE": "9",
+                    "CAPACITY": "9",
                     "QUANTITY": "1",
-                    "COST": "",
+                    "PRICE PAID": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage",
+                    "GRADE": "damage",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "AV2187-117",
+                    "MODEL": "AV2187-117",
                     "SKU": "AV2187-117",
-                    "SIZE": "10.5",
+                    "CAPACITY": "10.5",
                     "QUANTITY": "3",
-                    "COST": "",
+                    "PRICE PAID": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage box",
+                    "GRADE": "damage box",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "CD9065-116",
+                    "MODEL": "CD9065-116",
                     "SKU": "CD9065-116",
-                    "SIZE": "6y",
+                    "CAPACITY": "6y",
                     "QUANTITY": "1",
-                    "COST": "",
+                    "PRICE PAID": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damage box",
+                    "GRADE": "damage box",
                     "COMPLETE": "Complete"
                 },
                 {
-                    "NAME": "DQ4914-103",
+                    "MODEL": "DQ4914-103",
                     "SKU": "DQ4914-103",
-                    "SIZE": "5.5",
+                    "CAPACITY": "5.5",
                     "QUANTITY": "1",
-                    "COST": "",
+                    "PRICE PAID": "",
                     "LIST PRICE": "",
-                    "CONDITION": "damaged",
+                    "GRADE": "damaged",
                     "COMPLETE": "Complete"
                 }
             ]
@@ -333,7 +333,7 @@ def extract_and_store_data(text):
 
     # Connect to your Google Sheets document using service account credentials
     gc = gspread.service_account(filename='secretkey.json', scopes=scopes)  # Replace with your JSON credentials file
-    spreadsheet = gc.open('Inventory')  # Replace with your document name
+    spreadsheet = gc.open('WholeCell Inventory Template')  # Replace with your document name
 
     # Select the worksheet in your Google Sheets document
     worksheet = spreadsheet.get_worksheet(0)  # Replace with the index of your worksheet (0 for the first sheet)
@@ -346,7 +346,7 @@ def extract_and_store_data(text):
         data_dict = {}
     
         # Define the keys you want in data_dict
-        keys_to_extract = ['Name', 'List Price', 'Cost', 'Sku', 'Condition', 'Size', 'Quantity', 'Complete']
+        keys_to_extract = ['Model', 'List Price', 'Price Paid', 'Sku', 'Grade', 'Capacity', 'Quantity', 'Complete']
     
         # Iterate through the keys and add them to data_dict if they exist in the product
         for key in keys_to_extract:
@@ -355,11 +355,11 @@ def extract_and_store_data(text):
     
         # Preprocess the data (remove '$' from "List Price" and "Cost")
         list_price = data_dict.get('List Price', '').replace('$', '')
-        cost = data_dict.get('Cost', '').replace('$', '')
+        cost = data_dict.get('Price Paid', '').replace('$', '')
     
         # Add the preprocessed data to data_dict
         data_dict['List Price'] = list_price
-        data_dict['Cost'] = cost
+        data_dict['Price Paid'] = cost
     
         # Append a row for the current product
         # Ensure the values are in the order of the column names
