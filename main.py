@@ -353,14 +353,6 @@ def extract_and_store_data(text):
             if key in product:
                 data_dict[key] = product[key]
     
-        # Preprocess the data (remove '$' from "List Price" and "Cost")
-        cost = data_dict.get('Cost', '').replace('$', '')
-        price_paid = data_dict.get('Price Paid', '').replace('$', '')
-    
-        # Add the preprocessed data to data_dict
-        data_dict['Cost'] = cost
-        data_dict['Price Paid'] = price_paid
-    
         # Append a row for the current product
         # Ensure the values are in the order of the column names
         data_list = [data_dict.get(col, '') for col in header_row]
