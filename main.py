@@ -67,7 +67,7 @@ product_schema = Object(
         ),
         Text(
             id="Code",
-            description="Take 2 letters from manufacturer, ie say if Nike, then NK, put -BR in front of it, then take the capacity and sku, write the three 1 after the other, split by underscores."
+            description="Take 2 letters from manufacturer, ie say if Nike, then NK, put -BR in front of it, then take the capacity and sku, write the three one after another split by underscores."
         ),
         Text(
             id="Sku",
@@ -407,7 +407,7 @@ def extract_and_store_data(text):
     worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
 
     # Open the 'Product Catalog Template' sheet
-    spreadsheet_catalog = gc.open('Product Catalog Template')
+    spreadsheet_catalog = gc.open('product catalog template')
 
     # Select the first worksheet in the 'Product Catalog Template' sheet
     worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
