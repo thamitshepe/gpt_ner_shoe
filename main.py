@@ -62,6 +62,14 @@ product_schema = Object(
             description="The name or model of the product. If none then put Sku in Model and Sku."
         ),
         Text(
+            id="Manufacturer",
+            description="The manufacturer of the product. Use the Model to figure out who manufactured the product, if unknown use Nike"
+        ),
+        Text(
+            id="Code",
+            description="Take 2 letters from manufacturer, ie say if Nike, then NK, put -BR in front of it, then take the capacity and sku, write 1 after another split by underscore."
+        ),
+        Text(
             id="Sku",
             description="Code used to identify the product, if none the generate a random one with a random 3 digit number and always starting with GEN, for instance GEN034, number always random"
         ),
@@ -83,7 +91,11 @@ product_schema = Object(
         ),
         Text(
             id="Grade",
-            description="Grade or condition of individual capacity/size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words, if none leave empty"
+            description="Grade of individual capacity/size or overall product, either new or used, if none then New"
+        ),
+        Text(
+            id="Damages",
+            description="Damages or condition of individual capacity/size or overall product, db means damaged box, nb means no box, nl means no label, could be condition in words, if none leave empty"
         ),
         Text(
             id="Complete",
@@ -103,73 +115,94 @@ product_schema = Object(
             [
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Bq6472-107",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "COST": "$60",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "DH0210-100",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "COST": "None",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                     
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Bq6472-202",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "COST": "$100",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Dh5894-600",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
                     "COST": "None",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "1 Damaged Box",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "Dm9126-104",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "COST": "$60",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "Cv5276-001",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "COST": "$120",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "Women collection all brand new",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "BQ6472-102",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
                     "COST": "$110",
                     "PRICE PAID": "$200",
-                    "GRADE": "",
+                    "GRADE": "New",
+		            "DAMAGES": "",
                     "COMPLETE": "Complete"
                 }
             ],
@@ -186,67 +219,91 @@ product_schema = Object(
             [
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_8_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "8",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "COST": "None",
-                    "GRADE": "Damaged box",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "1 Damaged box",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_8.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "8.5",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "COST": "None",
+                    "COST": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "9",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "COST": "None",
-                    "GRADE": "2 Damaged boxes",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "2 Damaged boxes",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "9.5",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "COST": "None",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "11",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "COST": "None",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "11.5",
                     "QUANTITY": "2",
                     "PRICE PAID": "$110",
-                    "COST": "None",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "1 Damaged box",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": " Vapormax Black",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_12_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "12",
                     "QUANTITY": "1",
                     "PRICE PAID": "$110",
-                    "COST": "None",
+                    "COST": "",
+                    "GRADE": "New",
+                    "DAMAGES": "1 Damaged box",
                     "COMPLETE": "Complete"
                 }
 
@@ -264,42 +321,54 @@ DQ4914-103 damaged
             [
                 {
                     "MODEL": "DV9956-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9_DV9956-103",
                     "SKU": "DV9956-103",
                     "CAPACITY": "9",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
                     "COST": "",
-                    "GRADE": "damage",
+                    "GRADE": "Used",
+                    "DAMAGES": "Damage",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "AV2187-117",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5_DV9956-103",
                     "SKU": "AV2187-117",
                     "CAPACITY": "10.5",
                     "QUANTITY": "3",
                     "PRICE PAID": "",
                     "COST": "",
-                    "GRADE": "damage box",
+                    "GRADE": "New",
+                    "DAMAGES": "1 Damaged box",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "CD9065-116",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_6y_DV9956-103",
                     "SKU": "CD9065-116",
                     "CAPACITY": "6y",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
                     "COST": "",
-                    "GRADE": "damage box",
+                    "GRADE": "New",
+                    "DAMAGES": "1 Damaged box",
                     "COMPLETE": "Complete"
                 },
                 {
                     "MODEL": "DQ4914-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_5.5_DV9956-103",
                     "SKU": "DQ4914-103",
                     "CAPACITY": "5.5",
                     "QUANTITY": "1",
                     "PRICE PAID": "",
                     "COST": "",
-                    "GRADE": "damaged",
+                    "GRADE": "Used",
+                    "DAMAGES": "Damaged",
                     "COMPLETE": "Complete"
                 }
             ]
@@ -325,41 +394,55 @@ def extract_and_store_data(text):
     if not products:
         return "No products found in the extracted data."
 
-    scopes = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive'
-    ]
+    scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+    secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
 
+    # Connect to Google Sheets using service account credentials
+    gc = gspread.service_account(filename=secret_key_filename, scopes=scopes)
 
-    # Connect to your Google Sheets document using service account credentials
-    gc = gspread.service_account(filename='secretkey.json', scopes=scopes)  # Replace with your JSON credentials file
-    spreadsheet = gc.open('WholeCell Inventory Template')  # Replace with your document name
+    # Open the 'WholeCell Inventory Template' sheet
+    spreadsheet_wholecell = gc.open('WholeCell Inventory Template')
 
-    # Select the worksheet in your Google Sheets document
-    worksheet = spreadsheet.get_worksheet(0)  # Replace with the index of your worksheet (0 for the first sheet)
+    # Select the first worksheet in the 'WholeCell Inventory Template' sheet
+    worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
 
-    # Get the column names from the first row of the worksheet
-    header_row = worksheet.row_values(1)
+    # Open the 'Product Catalog Template' sheet
+    spreadsheet_catalog = gc.open('Product Catalog Template')
+
+    # Select the first worksheet in the 'Product Catalog Template' sheet
+    worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
+
+    # Get the column names from the first row of both worksheets
+    header_row_wholecell = worksheet_wholecell.row_values(1)
+    header_row_catalog = worksheet_catalog.row_values(1)
 
     for product in products:
-        # Create an empty dictionary to store the data for the current product
-        data_dict = {}
-    
-        # Define the keys you want in data_dict
-        keys_to_extract = ['Model', 'Cost', 'Price Paid', 'Sku', 'Grade', 'Capacity', 'Quantity', 'Complete']
-    
-        # Iterate through the keys and add them to data_dict if they exist in the product
-        for key in keys_to_extract:
+        # Create empty dictionaries to store data for the current product in both sheets
+        data_dict_wholecell = {}
+        data_dict_catalog = {}
+
+        # Define the keys you want in data_dict for each sheet
+        keys_to_extract_wholecell = ['Model', 'Manufacturer', 'Cost', 'Price Paid', 'Sku', 'Grade', 'Damages', 'Capacity', 'Quantity', 'Complete']
+        keys_to_extract_catalog = ['Model', 'Code', 'Manufacturer', 'Sku', 'Grade', 'Damages']
+
+        # Iterate through the keys and add them to data_dict for each sheet if they exist in the product
+        for key in keys_to_extract_wholecell:
             if key in product:
-                data_dict[key] = product[key]
-    
-        # Append a row for the current product
-        # Ensure the values are in the order of the column names
-        data_list = [data_dict.get(col, '') for col in header_row]
-        worksheet.append_rows([data_list])
-    
-    # Return the message about the number of rows added to Google Sheets
-    result_message = f"{len(products)} rows added to Google Sheets for the products."
+                data_dict_wholecell[key] = product[key]
+
+        for key in keys_to_extract_catalog:
+            if key in product:
+                data_dict_catalog[key] = product[key]
+
+        # Append a row for the current product in both sheets
+        data_list_wholecell = [data_dict_wholecell.get(col, '') for col in header_row_wholecell]
+        worksheet_wholecell.append_rows([data_list_wholecell])
+
+        data_list_catalog = [data_dict_catalog.get(col, '') for col in header_row_catalog]
+        worksheet_catalog.append_rows([data_list_catalog])
+
+    # Return the message about the number of rows added to both sheets
+    result_message = f"{len(products)} rows added to 'WholeCell Inventory Template' and 'Product Catalog Template'."
 
     # Return the result message
     return result_message
