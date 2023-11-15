@@ -407,7 +407,7 @@ def extract_and_store_data(text):
     worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
 
     # Open the 'Product Catalog Template' sheet
-    spreadsheet_catalog = gc.open('Product Catalog Template')
+    spreadsheet_catalog = gc.open('product catalog template')
 
     # Select the first worksheet in the 'Product Catalog Template' sheet
     worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
