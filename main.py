@@ -67,7 +67,7 @@ product_schema = Object(
         ),
         Text(
             id="Code",
-            description="Take 2 letters from manufacturer, ie say if Nike, then NK, put -BR in front of it, followed by _, then the capacity, followed by _, then the sku."
+            description="Take 2 letters from manufacturer, ie say if Nike, then NK, put -BR in front of it, then take the capacity and sku, write the three 1 after the other, split by underscores."
         ),
         Text(
             id="Sku",
@@ -115,8 +115,8 @@ product_schema = Object(
             [
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Bq6472-107",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
@@ -128,8 +128,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "DH0210-100",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
@@ -142,8 +142,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Bq6472-202",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
@@ -155,8 +155,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5w/9 men_Bq6472-107",
                     "SKU": "Dh5894-600",
                     "CAPACITY": "10.5w/9 men",
                     "QUANTITY": "1",
@@ -168,8 +168,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "Dm9126-104",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
@@ -181,8 +181,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "Cv5276-001",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
@@ -194,8 +194,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": "Women collection all brand new",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11w/9.5 men_Bq6472-107",
                     "SKU": "BQ6472-102",
                     "CAPACITY": "11w/9.5 men",
                     "QUANTITY": "1",
@@ -219,8 +219,8 @@ product_schema = Object(
             [
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_8_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_8_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "8",
                     "QUANTITY": "1",
@@ -232,8 +232,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_8.5_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_8.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "8.5",
                     "QUANTITY": "1",
@@ -243,8 +243,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_9_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "9",
                     "QUANTITY": "2",
@@ -256,8 +256,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_9.5_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "9.5",
                     "QUANTITY": "2",
@@ -269,8 +269,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_11_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "11",
                     "QUANTITY": "2",
@@ -282,8 +282,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_11.5_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_11.5_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "11.5",
                     "QUANTITY": "2",
@@ -295,8 +295,8 @@ product_schema = Object(
                 },
                 {
                     "MODEL": " Vapormax Black",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_12_924453-004",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_12_924453-004",
                     "SKU": "924453-004",
                     "CAPACITY": "12",
                     "QUANTITY": "1",
@@ -321,8 +321,8 @@ DQ4914-103 damaged
             [
                 {
                     "MODEL": "DV9956-103",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_9_DV9956-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_9_DV9956-103",
                     "SKU": "DV9956-103",
                     "CAPACITY": "9",
                     "QUANTITY": "1",
@@ -334,8 +334,8 @@ DQ4914-103 damaged
                 },
                 {
                     "MODEL": "AV2187-117",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_10.5_DV9956-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_10.5_DV9956-103",
                     "SKU": "AV2187-117",
                     "CAPACITY": "10.5",
                     "QUANTITY": "3",
@@ -347,8 +347,8 @@ DQ4914-103 damaged
                 },
                 {
                     "MODEL": "CD9065-116",
-		    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_6y_DV9956-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_6y_DV9956-103",
                     "SKU": "CD9065-116",
                     "CAPACITY": "6y",
                     "QUANTITY": "1",
@@ -360,8 +360,8 @@ DQ4914-103 damaged
                 },
                 {
                     "MODEL": "DQ4914-103",
-	       	    "MANUFACTURER": "Nike",
-		    "CODE": "NK-BR_5.5_DV9956-103",
+		            "MANUFACTURER": "Nike",
+		            "CODE": "NK-BR_5.5_DV9956-103",
                     "SKU": "DQ4914-103",
                     "CAPACITY": "5.5",
                     "QUANTITY": "1",
@@ -407,7 +407,7 @@ def extract_and_store_data(text):
     worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
 
     # Open the 'Product Catalog Template' sheet
-    spreadsheet_catalog = gc.open('product catalog template')
+    spreadsheet_catalog = gc.open('Product Catalog Template')
 
     # Select the first worksheet in the 'Product Catalog Template' sheet
     worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
