@@ -103,112 +103,111 @@ product_schema = Object(
         )
     ],
     examples=[
-        (
-            """Women collection all brand new $200
-    Bq6472-107 10.5w/9 men $60
-    DH0210-100 10.5w/9 men
-    Bq6472-202 10.5w/9 men $100
-    Dh5894-600 10.5w/9 men db
-    Dm9126-104 size 11w/9.5 men $60
-    Cv5276-001 size 11w/9.5 men $120
-    BQ6472-102 size 11w/9.5 men $110""",
-            [
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
-                    "SKU": "Bq6472-107",
-                    "CAPACITY": "10.5w/9 men",
-                    "QUANTITY": "1",
-                    "COST": "$60",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
-                    "SKU": "DH0210-100",
-                    "CAPACITY": "10.5w/9 men",
-                    "QUANTITY": "1",
-                    "COST": "None",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                    
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
-                    "SKU": "Bq6472-202",
-                    "CAPACITY": "10.5w/9 men",
-                    "QUANTITY": "1",
-                    "COST": "$100",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
-                    "SKU": "Dh5894-600",
-                    "CAPACITY": "10.5w/9 men",
-                    "QUANTITY": "1",
-                    "COST": "None",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "1 Damaged Box",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
-                    "SKU": "Dm9126-104",
-                    "CAPACITY": "11w/9.5 men",
-                    "QUANTITY": "1",
-                    "COST": "$60",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
-                    "SKU": "Cv5276-001",
-                    "CAPACITY": "11w/9.5 men",
-                    "QUANTITY": "1",
-                    "COST": "$120",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "Women collection all brand new",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
-                    "SKU": "BQ6472-102",
-                    "CAPACITY": "11w/9.5 men",
-                    "QUANTITY": "1",
-                    "COST": "$110",
-                    "PRICE PAID": "$200",
-                    "GRADE": "New",
-		            "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                }
-            ],
-        ),
-        (
-            """924453-004 vapormax black  $110
+    (
+        """Women collection all brand new $200
+Bq6472-107 10.5w/9 men $60
+DH0210-100 10.5w/9 men
+Bq6472-202 10.5w/9 men $100
+Dh5894-600 10.5w/9 men db
+Dm9126-104 size 11w/9.5 men $60
+Cv5276-001 size 11w/9.5 men $120
+BQ6472-102 size 11w/9.5 men $110""",
+        [
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
+                "SKU": "Bq6472-107",
+                "CAPACITY": "10.5w/9 men",
+                "QUANTITY": "1",
+                "COST": "$60",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
+                "SKU": "DH0210-100",
+                "CAPACITY": "10.5w/9 men",
+                "QUANTITY": "1",
+                "COST": "None",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
+                "SKU": "Bq6472-202",
+                "CAPACITY": "10.5w/9 men",
+                "QUANTITY": "1",
+                "COST": "$100",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_10.5w/9 men-Bq6472-107",
+                "SKU": "Dh5894-600",
+                "CAPACITY": "10.5w/9 men",
+                "QUANTITY": "1",
+                "COST": "None",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged Box",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
+                "SKU": "Dm9126-104",
+                "CAPACITY": "11w/9.5 men",
+                "QUANTITY": "1",
+                "COST": "$60",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
+                "SKU": "Cv5276-001",
+                "CAPACITY": "11w/9.5 men",
+                "QUANTITY": "1",
+                "COST": "$120",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "Women collection all brand new",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_11w/9.5 men-Bq6472-107",
+                "SKU": "BQ6472-102",
+                "CAPACITY": "11w/9.5 men",
+                "QUANTITY": "1",
+                "COST": "$110",
+                "PRICE PAID": "$200",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            }
+        ],
+    ),
+    (
+        """924453-004 vapormax black  $110
 8 db
 8.5
 9x2 2db
@@ -216,101 +215,100 @@ product_schema = Object(
 11x2
 11.5x2
 12""",
-            [
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_8-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "8",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "1 Damaged box",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_8.5-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "8.5",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_9-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "9",
-                    "QUANTITY": "2",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "2 Damaged boxes",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_9.5-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "9.5",
-                    "QUANTITY": "2",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_11-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "11",
-                    "QUANTITY": "2",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_11.5-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "11.5",
-                    "QUANTITY": "2",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "1 Damaged box",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": " Vapormax Black",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_12-924453-004",
-                    "SKU": "924453-004",
-                    "CAPACITY": "12",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "$110",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "1 Damaged box",
-                    "COMPLETE": "Complete"
-                }
-
-            ]
-        ),
-        (
-            """DV9956-103 damage
+        [
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_8-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "8",
+                "QUANTITY": "1",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged box",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_8.5-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "8.5",
+                "QUANTITY": "1",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_9-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "9",
+                "QUANTITY": "2",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "2 Damaged boxes",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_9.5-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "9.5",
+                "QUANTITY": "2",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_11-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "11",
+                "QUANTITY": "2",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_11.5-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "11.5",
+                "QUANTITY": "2",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged box",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": " Vapormax Black",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_12-924453-004",
+                "SKU": "924453-004",
+                "CAPACITY": "12",
+                "QUANTITY": "1",
+                "PRICE PAID": "$110",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged box",
+                "COMPLETE": "Complete"
+            }
+        ]
+    ),
+    (
+        """DV9956-103 damage
 9
 AV2187-117 damage box 
 10.5x3
@@ -318,63 +316,63 @@ CD9065-116 damage box
 6y
 DQ4914-103 damaged 
 5.5""",
-            [
-                {
-                    "MODEL": "DV9956-103",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_9-DV9956-103",
-                    "SKU": "DV9956-103",
-                    "CAPACITY": "9",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "",
-                    "COST": "",
-                    "GRADE": "Used",
-                    "DAMAGES": "Damage",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "AV2187-117",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_10.5-DV9956-103",
-                    "SKU": "AV2187-117",
-                    "CAPACITY": "10.5",
-                    "QUANTITY": "3",
-                    "PRICE PAID": "",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "1 Damaged box",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "CD9065-116",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_6y-DV9956-103",
-                    "SKU": "CD9065-116",
-                    "CAPACITY": "6y",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "",
-                    "COST": "",
-                    "GRADE": "New",
-                    "DAMAGES": "1 Damaged box",
-                    "COMPLETE": "Complete"
-                },
-                {
-                    "MODEL": "DQ4914-103",
-		            "MANUFACTURER": "Nike",
-		            "CODE": "NK-BR_5.5-DV9956-103",
-                    "SKU": "DQ4914-103",
-                    "CAPACITY": "5.5",
-                    "QUANTITY": "1",
-                    "PRICE PAID": "",
-                    "COST": "",
-                    "GRADE": "Used",
-                    "DAMAGES": "Damaged",
-                    "COMPLETE": "Complete"
-                }
-            ]
-        )
+        [
+            {
+                "MODEL": "DV9956-103",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_9-DV9956-103",
+                "SKU": "DV9956-103",
+                "CAPACITY": "9",
+                "QUANTITY": "1",
+                "PRICE PAID": "",
+                "COST": "",
+                "GRADE": "Used",
+                "DAMAGES": "Damage",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "AV2187-117",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_10.5-DV9956-103",
+                "SKU": "AV2187-117",
+                "CAPACITY": "10.5",
+                "QUANTITY": "3",
+                "PRICE PAID": "",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged box",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "CD9065-116",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_6y-DV9956-103",
+                "SKU": "CD9065-116",
+                "CAPACITY": "6y",
+                "QUANTITY": "1",
+                "PRICE PAID": "",
+                "COST": "",
+                "GRADE": "New",
+                "DAMAGES": "1 Damaged box",
+                "COMPLETE": "Complete"
+            },
+            {
+                "MODEL": "DQ4914-103",
+                "MANUFACTURER": "Nike",
+                "CODE": "NK-BR_5.5-DV9956-103",
+                "SKU": "DQ4914-103",
+                "CAPACITY": "5.5",
+                "QUANTITY": "1",
+                "PRICE PAID": "",
+                "COST": "",
+                "GRADE": "Used",
+                "DAMAGES": "Damaged",
+                "COMPLETE": "Complete"
+            }
+        ]
+    )
+]
 
-    ]
 )
 
 
