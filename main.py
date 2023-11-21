@@ -36,9 +36,6 @@ load_dotenv()  # Load the environment variables from the .env file
 # Access the environment variable
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
-URL = os.environ.get("UPSTASH_REDIS_REST_URL")
-TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
-
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
 
@@ -57,7 +54,7 @@ sheet2 = workbook_sheet2.sheet1
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=1,
+    temperature=0.7,
     max_tokens=2000,
     openai_api_key=openai_api_key
 )
