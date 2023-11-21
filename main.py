@@ -24,6 +24,8 @@ from langchain.callbacks import get_openai_callback
 
 from fastapi import FastAPI, HTTPException, Form
 from langchain.embeddings import OpenAIEmbeddings
+from langchain.cache import UpstashRedisCache
+from upstash_redis import Redis
 import functools
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -35,6 +37,11 @@ load_dotenv()  # Load the environment variables from the .env file
 
 # Access the environment variable
 openai_api_key = os.environ.get("OPENAI_API_KEY")
+
+URL = os.environ.get("UPSTASH_REDIS_REST_URL")
+TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
+
+langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
@@ -54,8 +61,8 @@ sheet2 = workbook_sheet2.sheet1
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=0.7,
-    max_tokens=2000,
+    temperature=1,
+    max_tokens=2500,
     openai_api_key=openai_api_key
 )
 
@@ -410,8 +417,8 @@ def extract_and_store_data(text):
         data_dict_catalog = {}
 
         # Define the keys you want in data_dict for each sheet
-        keys_to_extract_wholecell = ['Model', 'Sku', 'Manufacturer', 'Capacity', 'Quantity', 'Cost', 'Price Paid', 'Grade', 'Damages', 'Complete']
-        keys_to_extract_catalog = ['Model', 'Code', 'Manufacturer', 'Capacity', 'Sku', 'Grade', 'Damages']
+        keys_to_extract_wholecell = ['Model', 'Manufacturer', 'Cost', 'Price Paid', 'Sku', 'Grade', 'Damages', 'Capacity', 'Quantity', 'Complete']
+        keys_to_extract_catalog = ['Model', 'Code', 'Manufacturer', 'Sku', 'Grade', 'Damages', 'Capacity']
 
         # Iterate through the keys and add them to data_dict for each sheet if they exist in the product
         for key in keys_to_extract_wholecell:
