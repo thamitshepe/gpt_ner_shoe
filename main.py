@@ -413,7 +413,7 @@ def extract_and_store_data(text):
         data_dict_catalog = {}
 
         # Define the keys you want in data_dict for each sheet
-        keys_to_extract_wholecell = ['Model', 'Manufacturer', 'Cost', 'Price Paid', 'Sku', 'Grade', 'Damages', 'Capacity', 'Quantity', 'Complete']
+        keys_to_extract_wholecell = ['Model', 'Sku', 'Manufacturer', 'Capacity', 'Quantity', 'Cost', 'Price Paid', 'Grade', 'Damages', 'Complete']
         keys_to_extract_catalog = ['Model', 'Code', 'Manufacturer', 'Capacity', 'Sku', 'Grade', 'Damages']
 
         # Iterate through the keys and add them to data_dict for each sheet if they exist in the product
