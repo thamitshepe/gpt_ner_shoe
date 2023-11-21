@@ -53,8 +53,8 @@ sheet2 = workbook_sheet2.sheet1
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=1.1,
-    max_tokens=3000,
+    temperature=1,
+    max_tokens=2000,
     openai_api_key=openai_api_key
 )
 
@@ -86,7 +86,7 @@ product_schema = Object(
         ),
         Number(
             id="Quantity",
-            description="Quantity of each capacity/size of the product, always default to 1 when none"
+            description="Quantity of each capacity/size of the product, always put number 1 if or when value isnt present"
         ),
         Text(
             id="Price Paid",
