@@ -404,13 +404,13 @@ def extract_and_store_data(text):
     spreadsheet_wholecell = gc.open('WholeCell Inventory Template')
 
     # Select the first worksheet in the 'WholeCell Inventory Template' sheet
-    worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
+    worksheet_wholecell = spreadsheet_wholecell.get_worksheet(1)
 
     # Open the 'Product Catalog Template' sheet
     spreadsheet_catalog = gc.open('product catalog template')
 
     # Select the first worksheet in the 'Product Catalog Template' sheet
-    worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
+    worksheet_catalog = spreadsheet_catalog.get_worksheet(1)
 
     # Get the column names from the first row of both worksheets
     header_row_wholecell = worksheet_wholecell.row_values(1)
