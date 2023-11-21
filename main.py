@@ -24,8 +24,6 @@ from langchain.callbacks import get_openai_callback
 
 from fastapi import FastAPI, HTTPException, Form
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.cache import UpstashRedisCache
-from upstash_redis import Redis
 import functools
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -40,8 +38,6 @@ openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 URL = os.environ.get("UPSTASH_REDIS_REST_URL")
 TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
-
-langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
@@ -62,7 +58,7 @@ sheet2 = workbook_sheet2.sheet1
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=1,
-    max_tokens=2500,
+    max_tokens=2000,
     openai_api_key=openai_api_key
 )
 
