@@ -30,7 +30,6 @@ import functools
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-
 # Configure the FastAPI application
 app = FastAPI()
 
@@ -43,6 +42,18 @@ URL = os.environ.get("UPSTASH_REDIS_REST_URL")
 TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
 
 langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
+
+# Load Google Sheets credentials for the first sheet
+creds_sheet1 = ServiceAccountCredentials.from_json_keyfile_name("secretkey.json", scopes=scopes)
+file_sheet1 = gspread.authorize(creds_sheet1)
+workbook_sheet1 = file_sheet1.open("WholeCell Inventory Template")  # Change to the actual name of your first sheet
+sheet1 = workbook_sheet1.sheet1
+
+# Load Google Sheets credentials for the second sheet
+creds_sheet2 = ServiceAccountCredentials.from_json_keyfile_name("secretkey.json", scopes=scopes)
+file_sheet2 = gspread.authorize(creds_sheet2)
+workbook_sheet2 = file_sheet2.open("product catalog template")  # Change to the actual name of your second sheet
+sheet2 = workbook_sheet2.sheet1
 
 llm = ChatOpenAI(
     model_name="gpt-4",
@@ -392,27 +403,9 @@ def extract_and_store_data(text):
     if not products:
         return "No products found in the extracted data."
 
-    scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-    secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
-
-    # Connect to Google Sheets using service account credentials
-    gc = gspread.service_account(filename=secret_key_filename, scopes=scopes)
-
-    # Open the 'WholeCell Inventory Template' sheet
-    spreadsheet_wholecell = gc.open('WholeCell Inventory Template')
-
-    # Select the first worksheet in the 'WholeCell Inventory Template' sheet
-    worksheet_wholecell = spreadsheet_wholecell.get_worksheet(0)
-
-    # Open the 'Product Catalog Template' sheet
-    spreadsheet_catalog = gc.open('product catalog template')
-
-    # Select the first worksheet in the 'Product Catalog Template' sheet
-    worksheet_catalog = spreadsheet_catalog.get_worksheet(0)
-
     # Get the column names from the first row of both worksheets
-    header_row_wholecell = worksheet_wholecell.row_values(1)
-    header_row_catalog = worksheet_catalog.row_values(1)
+    header_row_wholecell = sheet1.row_values(1)
+    header_row_catalog = sheet2.row_values(1)
 
     for product in products:
         # Create empty dictionaries to store data for the current product in both sheets
@@ -434,10 +427,10 @@ def extract_and_store_data(text):
 
         # Append a row for the current product in both sheets
         data_list_wholecell = [data_dict_wholecell.get(col, '') for col in header_row_wholecell]
-        worksheet_wholecell.append_rows([data_list_wholecell])
+        sheet1.append_rows([data_list_wholecell])
 
         data_list_catalog = [data_dict_catalog.get(col, '') for col in header_row_catalog]
-        worksheet_catalog.append_rows([data_list_catalog])
+        sheet2.append_rows([data_list_catalog])
 
     # Return the message about the number of rows added to both sheets
     result_message = f"{len(products)} rows added to 'WholeCell Inventory Template' and 'Product Catalog Template'."
