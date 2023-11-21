@@ -24,8 +24,6 @@ from langchain.callbacks import get_openai_callback
 
 from fastapi import FastAPI, HTTPException, Form
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.cache import UpstashRedisCache
-from upstash_redis import Redis
 import functools
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -38,14 +36,8 @@ load_dotenv()  # Load the environment variables from the .env file
 # Access the environment variable
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
-URL = os.environ.get("UPSTASH_REDIS_REST_URL")
-TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
-
-langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
-
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
-
 
 # Load Google Sheets credentials for the first sheet
 creds_sheet1 = ServiceAccountCredentials.from_json_keyfile_name("secretkey.json", scopes=scopes)
