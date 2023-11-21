@@ -43,6 +43,10 @@ TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")
 
 langchain.llm_cache = UpstashRedisCache(redis_=Redis(url=URL, token=TOKEN))
 
+scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+secret_key_filename = 'secretkey.json'  # Replace with your JSON credentials file
+
+
 # Load Google Sheets credentials for the first sheet
 creds_sheet1 = ServiceAccountCredentials.from_json_keyfile_name("secretkey.json", scopes=scopes)
 file_sheet1 = gspread.authorize(creds_sheet1)
