@@ -448,3 +448,10 @@ def extract_and_store_data(text):
     # Return the result message
     return result_message
 
+@app.post("/aishoe/")
+async def process_text(text: str):
+    try:
+        result = extract_and_store_data(text)
+        return {"message": result}
+    except Exception as e:
+        return HTTPException(status_code=500, detail=str(e))
