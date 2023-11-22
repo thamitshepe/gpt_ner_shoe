@@ -54,7 +54,7 @@ sheet2 = workbook_sheet2.sheet1
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=1.2,
-    max_tokens=2500,
+    max_tokens=2000,
     openai_api_key=openai_api_key
 )
 
@@ -423,10 +423,19 @@ def extract_and_store_data(text):
 
         # Append a row for the current product in both sheets
         data_list_wholecell = [data_dict_wholecell.get(col, '') for col in header_row_wholecell]
-        sheet1.append_rows([data_list_wholecell])
-
         data_list_catalog = [data_dict_catalog.get(col, '') for col in header_row_catalog]
-        sheet2.append_rows([data_list_catalog])
+
+        try:
+            sheet1.append_rows([data_list_wholecell])
+            sheet2.append_rows([data_list_catalog])
+        except gspread.exceptions.APIError as e:
+            if "401 Unauthorized" in str(e):
+                return "Authentication error. Please check your credentials."
+            else:
+                return f"Error appending rows to Google Sheets: {str(e)}"
+
+        # Add a delay between API calls to avoid rate limiting
+        time.sleep(1)
 
     # Return the message about the number of rows added to both sheets
     result_message = f"{len(products)} rows added to 'WholeCell Inventory Template' and 'Product Catalog Template'."
