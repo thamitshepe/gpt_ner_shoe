@@ -53,8 +53,8 @@ sheet2 = workbook_sheet2.sheet1
 
 llm = ChatOpenAI(
     model_name="gpt-4",
-    temperature=0.8,
-    max_tokens=3300,
+    temperature=0.5,
+    max_tokens=2500,
     openai_api_key=openai_api_key
 )
 
