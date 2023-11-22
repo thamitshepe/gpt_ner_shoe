@@ -403,6 +403,10 @@ def extract_and_store_data(text):
     header_row_wholecell = sheet1.row_values(1)
     header_row_catalog = sheet2.row_values(1)
 
+    # List to store rows for batch appending
+    rows_to_append_wholecell = []
+    rows_to_append_catalog = []
+
     for product in products:
         # Create empty dictionaries to store data for the current product in both sheets
         data_dict_wholecell = {}
@@ -425,17 +429,18 @@ def extract_and_store_data(text):
         data_list_wholecell = [data_dict_wholecell.get(col, '') for col in header_row_wholecell]
         data_list_catalog = [data_dict_catalog.get(col, '') for col in header_row_catalog]
 
-        try:
-            sheet1.append_rows([data_list_wholecell])
-            sheet2.append_rows([data_list_catalog])
-        except gspread.exceptions.APIError as e:
-            if "401 Unauthorized" in str(e):
-                return "Authentication error. Please check your credentials."
-            else:
-                return f"Error appending rows to Google Sheets: {str(e)}"
+        rows_to_append_wholecell.append(data_list_wholecell)
+        rows_to_append_catalog.append(data_list_catalog)
 
-        # Add a delay between API calls to avoid rate limiting
-        time.sleep(1)
+    try:
+        # Append rows in batches
+        sheet1.append_rows(rows_to_append_wholecell)
+        sheet2.append_rows(rows_to_append_catalog)
+    except gspread.exceptions.APIError as e:
+        if "401 Unauthorized" in str(e):
+            return "Authentication error. Please check your credentials."
+        else:
+            return f"Error appending rows to Google Sheets: {str(e)}"
 
     # Return the message about the number of rows added to both sheets
     result_message = f"{len(products)} rows added to 'WholeCell Inventory Template' and 'Product Catalog Template'."
@@ -443,10 +448,3 @@ def extract_and_store_data(text):
     # Return the result message
     return result_message
 
-@app.post("/aishoe/")
-async def process_text(text: str):
-    try:
-        result = extract_and_store_data(text)
-        return {"message": result}
-    except Exception as e:
-        return HTTPException(status_code=500, detail=str(e))
