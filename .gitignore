@@ -4,3 +4,4 @@ Vercel.json
 .vercelignore
 api
 secretkey.json
+.env
