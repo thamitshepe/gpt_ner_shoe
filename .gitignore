@@ -3,3 +3,4 @@ aishoe
 Vercel.json
 .vercelignore
 api
+secretkey.json
